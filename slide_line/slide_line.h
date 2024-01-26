@@ -1,6 +1,6 @@
 #ifndef __Slide_Line__
 #define __Slide_Line__
-
+#include <stddef.h>
 #define SLIDE_LEFT 0
 #define SLIDE_RIGHT 1
 
