@@ -1,53 +1,103 @@
-#include <stdio.h>
 #include "slide_line.h"
-#include <stdint.h>
-void slide_right(int *line, size_t size);
-void slide_left(int *line, size_t size);
 
+/**
+ * slide_line - Slide and merge an array of integers in the given direction.
+ *
+ * @line: Pointer to the array of integers.
+ * @size: Number of elements in the array.
+ * @direction: SLIDE_LEFT or SLIDE_RIGHT.
+ *
+ * Return: 1 upon success, 0 upon failure.
+ */
 int slide_line(int *line, size_t size, int direction)
 {
-	if (direction == SLIDE_LEFT)
-	{
-		slide_left(line,size);
+    size_t i, j;
 
-		return 1;
-	}
+    if (direction != SLIDE_LEFT && direction != SLIDE_RIGHT)
+        return 0;
 
-	if (direction == SLIDE_RIGHT)
-	{
-		slide_right(line,size);
-		return 1;
-	}
+    if (direction == SLIDE_LEFT)
+    {
+        for (i = 0, j = 0; i < size; i++)
+        {
+            if (line[i] != 0)
+            {
+                if (j != i)
+                {
+                    line[j] = line[i];
+                    line[i] = 0;
+                }
+                j++;
+            }
+        }
 
-	return 0;
-}
+        for (i = 0; i < size - 1; i++)
+        {
+            if (line[i] == line[i + 1])
+            {
+                line[i] *= 2;
+                line[i + 1] = 0;
+            }
+        }
 
-void slide_left(int *line, size_t size)
-{
-	for (size_t i = 0 ; i < size ;i++)
-	{
-		for (size_t j = 1; j < size ;j++)
-		{
-			if (line[i] == line[j])
-			{
-				line[i] += line[j];
-				line[j] = 0;
-			}
-		}
-	}
-}
+        for (i = 0, j = 0; i < size; i++)
+        {
+            if (line[i] != 0)
+            {
+                if (j != i)
+                {
+                    line[j] = line[i];
+                    line[i] = 0;
+                }
+                j++;
+            }
+        }
+    }
+    else
+    {
+        for (i = size - 1, j = size - 1; j < size; i--)
+        {
+            if (line[i] != 0)
+            {
+                if (j != i)
+                {
+                    line[j] = line[i];
+                    line[i] = 0;
+                }
+                j--;
+            }
+            if (i == 0)
+            {
+                break;
+            }
+        }
 
-void slide_right(int *line, size_t size)
-{
-	for (size_t i = size - 1; i > 0 ; i--)
-	{
-		for (size_t j = size - 2; j > 0 ;j -= 2)
-		{
-			if (line[i] == line[j])
-			{
-				line[i] += line[j];
-				line[j] = 0;
-			}
-		}
-	} 
+        for (i = size - 1; i > 0; i--)
+        {
+            if (line[i] == line[i - 1])
+            {
+                line[i] *= 2;
+                line[i - 1] = 0;
+            }
+        }
+
+        for (i = size - 1, j = size - 1; j < size; i--)
+        {
+            if (line[i] != 0)
+            {
+                if (j != i)
+                {
+                    line[j] = line[i];
+                    line[i] = 0;
+                }
+                j--;
+            }
+            if (i == 0)
+            {
+                break;
+            }
+        }
+    }
+
+    return 1;
 }
