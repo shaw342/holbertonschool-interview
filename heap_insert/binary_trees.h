@@ -1,4 +1,4 @@
-#ifndef _BNARY_TREES_H_
+#ifdef _BINARY_TREES_H_
 #define _BINARY_TREES_H_
 
 #include <stddef.h>
@@ -30,6 +30,5 @@ heap_t *heap_insert(heap_t **root, int value);
 void heapify_up(heap_t *node);
 size_t binary_tree_height(const binary_tree_t *tree);
 int binary_tree_is_perfect(const binary_tree_t *tree);
-binary_tree_t newNode(int value);
 
 #endif /* _BINARY_TREES_H_ */
