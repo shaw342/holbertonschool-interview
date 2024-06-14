@@ -1,31 +1,31 @@
 #include "lists.h"
 
 int is_palindrome(listint_t **head) {
+    listint_t *slow, *fast;
+
     if (*head == NULL || (*head)->next == NULL) {
         return 1;
     }
 
-    listint_t *slow = *head;
-    listint_t *fast = *head;
-    listint_t *reverseHead = NULL;
-    int result;
-
+    slow = *head;
+    fast = (*head)->next;
 
     while (fast != NULL && fast->next != NULL) {
         slow = slow->next;
         fast = fast->next->next;
     }
 
-    reverseHead = reverse(slow->next);
+    listint_t *reverseHead = reverse(slow->next);
     slow->next = NULL;
 
-       
-    result = cmp(*head, reverseHead);
+    int result = cmp(*head, reverseHead);
+
     reverse(reverseHead);
     slow->next = reverseHead;
 
     return result;
 }
+
 
 int cmp(listint_t *head1,listint_t *head2) 
 {
