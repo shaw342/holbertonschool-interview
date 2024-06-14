@@ -2,8 +2,10 @@
 
 int is_palindrome(listint_t **head)
 {
-	if (*head == NULL || (*head)->next == NULL)
-                return 1;
+	 if (*head == NULL || (*head)->next == NULL) {
+		return 1;
+	 }
+
 
 	listint_t *slow = *head;
 	listint_t *fast = *head;
