@@ -1,7 +1,8 @@
 #include "lists.h"
 
 int is_palindrome(listint_t **head) {
-    listint_t *slow, *fast;
+    listint_t *slow, *fast, *reverseHead;
+    int *result
 
     if (*head == NULL || (*head)->next == NULL) {
         return 1;
@@ -15,10 +16,10 @@ int is_palindrome(listint_t **head) {
         fast = fast->next->next;
     }
 
-    listint_t *reverseHead = reverse(slow->next);
+    reverseHead = reverse(slow->next);
     slow->next = NULL;
 
-    int result = cmp(*head, reverseHead);
+    result = cmp(*head, reverseHead);
 
     reverse(reverseHead);
     slow->next = reverseHead;
