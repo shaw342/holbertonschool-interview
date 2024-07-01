@@ -3,6 +3,7 @@
 
 int is_palindrome(unsigned long n){
 	unsigned long reversed = 0;
+	unsigned long check = n;
 
 	if ( n <= 10){
 		return 1;
@@ -12,6 +13,5 @@ int is_palindrome(unsigned long n){
 		reversed = reversed * 10 + n % 10;
 		n = n / 10;
 	}
-
-	return (reversed == n || reversed == n/10);
+	return reversed == check;
 }
