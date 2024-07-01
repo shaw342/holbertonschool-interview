@@ -5,7 +5,7 @@ int is_palindrome(unsigned long n){
 	unsigned long reversed = 0;
 
 	if ( n <= 10){
-		return 1
+		return 1;
 	}
 	while (n != 0)
 	{
