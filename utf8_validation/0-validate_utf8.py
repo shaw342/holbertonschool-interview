@@ -1,19 +1,15 @@
 #!/usr/bin/python3
 """
-ValidUTF8 Module
+ValidUTF8 MOdule
 """
-import codecs
 
 
 def validUTF8(data):
+    """ Determines if a given data set represents a valid UTF-8 encoding.
     """
-    Determine if a given data set represent a valid UTF-8 encoding
-    """
-    for num in data:
-        if num < 0 or num > 255:
-            return False
+    byte_sequence = bytes([num & 0xFF for num in data])
     try:
-        codecs.decode(bytes(data), "utf-8")
+        byte_sequence.decode('utf-8')
         return True
     except UnicodeDecodeError:
         return False
