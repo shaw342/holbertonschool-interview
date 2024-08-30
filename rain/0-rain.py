@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+
+
+"""Module that calculate how many square units of water
+    will be retained after it rains."""
+
+
 def rain(walls):
     """
     rain module square_water
