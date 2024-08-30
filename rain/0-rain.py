@@ -3,6 +3,9 @@ def rain(walls):
     """
     rain module square_water
     """
+    if walls == []:
+        return 0
+
     width :int = 0
     height :int = 0
     square_water :int = 0
