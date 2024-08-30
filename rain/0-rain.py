@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 def rain(walls):
+    """
+    rain module square_water
+    """
     width :int = 0
     height :int = 0
     square_water :int = 0
