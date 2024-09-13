@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "search_algos.h"
 
-void print_array(int *array, int left, int right)
+void printArray(int *array, int left, int right)
 {
 	int i;
 
