@@ -1,11 +1,16 @@
 #include <stdio.h>
 #include "search_algos.h"
 
-void printArray(int *array,int low,int high){
+void print_array(int *array, int left, int right)
+{
 	int i;
-	printf("Searching in array:");
-	for (i = low; i < high;i++){
-		printf(" %d",array[i]);
+
+	printf("Searching in array: ");
+	for (i = left; i <= right; i++)
+	{
+		printf("%d", array[i]);
+		if (i < right)
+			printf(", ");
 	}
 	printf("\n");
 }
