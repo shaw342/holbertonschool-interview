@@ -10,7 +10,7 @@ int heap_extract(heap_t **root)
 	heap_t *last_inserted_node = NULL;
 	int swap;
 
-	if (!root)
+	if (root == NULL)
 	{
 		return (0);
 	}
