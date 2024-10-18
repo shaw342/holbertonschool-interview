@@ -86,3 +86,4 @@ void merge_sort(int *array, size_t size)
 	merge_sort_recursive(array, temp, 0, size);
 	free(temp);
 }
+
