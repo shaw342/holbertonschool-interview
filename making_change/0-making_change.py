@@ -6,10 +6,7 @@ make change file
 
 def makeChange(coins, total):
     """
-    make change function that
-    take coins and total parameter
-    determine the fewest number of coins
-    needed to meet a given amount total
+    Return the fewest number of coins needed to meet total
     """
     coin_reverse = sorted(coins, reverse=True)
     count = 0
