@@ -13,11 +13,11 @@
 #include <stdlib.h>
 typedef struct List
 {
-  char *str;
-  struct List *prev;
-  struct List *next;
+	char *str;
+	struct List *prev;
+	struct List *next;
 } List;
-List *create_node(char* str);
+List *create_node(char *str);
 List *add_node_end(List **list, char *str);
 List *add_node_begin(List **list, char *str);
 #endif
