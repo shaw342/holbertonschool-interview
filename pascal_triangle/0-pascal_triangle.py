@@ -1,6 +1,14 @@
 #!/usr/bin/python3
+"""
+    module pascal_triangle
+"""
 
 def pascal_triangle(n):
+    """
+        function take n integer
+        return the list of pascal_triangle
+    """
+
     T = []
     for i in range(n):
         l = [0] * (i + 1)
